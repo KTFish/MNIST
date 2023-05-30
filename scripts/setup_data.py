@@ -1,9 +1,10 @@
 import torch
 from torchvision.datasets import MNIST
 from torch.utils.data import DataLoader
+import torchvision
 
 
-def create_datasets(train_dir, test_dir, transform=torch.transforms.ToTensor()):
+def create_datasets(train_dir, test_dir, transform=torchvision.transforms.ToTensor()):
     # Create MNIST Train and Test Datasets
     train_dataset = MNIST(
         root=train_dir,
