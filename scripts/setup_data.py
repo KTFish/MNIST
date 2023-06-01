@@ -1,4 +1,3 @@
-import torch
 from torchvision.datasets import MNIST
 from torch.utils.data import DataLoader
 import torchvision
@@ -31,7 +30,6 @@ def create_dataloaders(train_dir, test_dir, batch_size=32):
 
     # Turn datasets into dataloaders
     train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
     return train_dataloader, test_dataloader, class_names
