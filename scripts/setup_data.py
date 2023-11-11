@@ -36,8 +36,8 @@ def create_datasets(train_dir, test_dir, transform) -> Tuple[MNIST, MNIST, List[
 
 
 def create_dataloaders(
-    train_dir=r"C:\Users\janek\notebooks\0_Projects\KAGGLE\data\mnist\train",
-    test_dir=r"C:\Users\janek\notebooks\0_Projects\KAGGLE\data\mnist\test",
+    train_dir=r".\data",
+    test_dir=r".\data",
     batch_size=32,
     transform=ToTensor(),
 ):
