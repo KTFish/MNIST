@@ -7,9 +7,7 @@ from typing import Tuple, List
 import os
 
 
-def create_datasets(
-    train_dir, test_dir, transform=ToTensor()
-) -> Tuple[MNIST, MNIST, List[str]]:
+def create_datasets(train_dir, test_dir, transform) -> Tuple[MNIST, MNIST, List[str]]:
     # Create folders if needed
     if not os.path.exists(train_dir):
         os.makedirs(train_dir, exist_ok=True)
@@ -41,9 +39,12 @@ def create_dataloaders(
     train_dir=r"C:\Users\janek\notebooks\0_Projects\KAGGLE\data\mnist\train",
     test_dir=r"C:\Users\janek\notebooks\0_Projects\KAGGLE\data\mnist\test",
     batch_size=32,
+    transform=ToTensor(),
 ):
     # Create datasets and get class names
-    train_dataset, test_dataset, class_names = create_datasets(train_dir, test_dir)
+    train_dataset, test_dataset, class_names = create_datasets(
+        train_dir, test_dir, transform
+    )
 
     # Turn datasets into dataloaders
     train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
